@@ -23,6 +23,8 @@ function playerPlay() {
 
 function playRound (x = computerPlay(), y = playerPlay()) {
     let result;
+    console.log(x);
+    console.log(y);
     //rock > scissors
     if (x === 0 && y === 2){
         alert("You Lost ! Rock Beats Scissors!");
@@ -61,19 +63,27 @@ function playRound (x = computerPlay(), y = playerPlay()) {
 }
 
 function game() {
-    let winlose = [];
-    for (let i = 0; i<5; i++) {
-        let score = playRound();
-        let status;
-        if (score === 0) {
-            status = "Lost";
-        }else if (score === 1) {
-            status = "Win";
-        }else if (score === 2) {
-            status = "Draw"
+    let gameCounter = true ;
+    let computerScore = 0;
+    let playerScore = 0;
+    let drawScore = 0;
+    while(gameCounter) {
+        let plays = playRound();
+        if (plays === 0) {
+            computerScore++;
+        }else if (plays === 1) {
+            playerScore++;
+        }else if (plays === 2 ){
+            drawScore++
         }
-        winlose.push(status);
+        if(computerScore === 5 || playerScore === 5) {
+            gameCounter = false;
+        }
     }
-    alert("Your win/lose stat : " + winlose);
+   if (playerScore === 5) {
+       alert("You Win! Score: " + playerScore+ " Win - " + drawScore + " Draws - " + computerScore + " Lost");
+   }else {
+       alert("You Lost! Score: " + playerScore+ " Win - " + drawScore + " Draws - " + computerScore + " Lost");
+   }
 }
 game()
