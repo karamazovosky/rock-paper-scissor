@@ -74,8 +74,6 @@ function game() {
         }
         winlose.push(status);
     }
-    for (let j = 0; j<5; j++) {
-        console.log(winlose[j]);
-    }
+    alert(winlose);
 }
 game()
