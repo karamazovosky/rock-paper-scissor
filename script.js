@@ -25,37 +25,37 @@ function playRound (x = computerPlay(), y = playerPlay()) {
     let result;
     //rock > scissors
     if (x === 0 && y === 2){
-        console.log("You Lost ! Rock Beats Scissors!");
+        alert("You Lost ! Rock Beats Scissors!");
         return result = 0;
     } else if (x === 2 && y === 0) {
-        console.log("You Win ! Rock Beats Scissors!");
+        alert("You Win ! Rock Beats Scissors!");
         return result = 1;
     }
     //paper > rock
     if (x === 1 && y === 0) {
-        console.log("You Lost ! Paper Beats Rocks!");
+        alert("You Lost ! Paper Beats Rocks!");
         return result = 0;
     }else if(x === 0 && y === 1) {
-        console.log("You Win ! Paper Beats Rocks!");
+        alert("You Win ! Paper Beats Rocks!");
         return result = 1;
     }
     //scissors > paper
     if (x === 2 && y ===1) {
-        console.log("You Lost ! Scissors Beats Paper!");
+        alert("You Lost ! Scissors Beats Paper!");
         return result = 0;
     }else if(x === 1 && y ===2) {
-        console.log("You Win ! Scissors Beats Paper!");
+        alert("You Win ! Scissors Beats Paper!");
         return result = 1;
     }
     //draw
     if (x === y && x === 0) {
-        console.log("Its a Draw! Both Side Picked Rock!");
+        alert("Its a Draw! Both Side Picked Rock!");
         return result = 2;
     }else if (x === y && x === 1) {
-        console.log("Its a Draw! Both Side Picked Paper!");
+        alert("Its a Draw! Both Side Picked Paper!");
         return result = 2;
     }else if(x === y && x === 2) {
-        console.log("Its a Draw! Both Side Picked Scissors!");
+        alert("Its a Draw! Both Side Picked Scissors!");
         return result = 2;
     }
 }
@@ -74,6 +74,6 @@ function game() {
         }
         winlose.push(status);
     }
-    alert(winlose);
+    alert("Your win/lose stat : " + winlose);
 }
 game()
