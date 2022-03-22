@@ -21,7 +21,8 @@ function playerPlay() {
     }
 }
 
-function playRound (x = computerPlay(), y = playerPlay()) {
+
+function playRound (y = playerPlay(), x = computerPlay()) {
     let result;
     console.log(x);
     console.log(y);
@@ -62,28 +63,11 @@ function playRound (x = computerPlay(), y = playerPlay()) {
     }
 }
 
-function game() {
-    let gameCounter = true ;
-    let computerScore = 0;
-    let playerScore = 0;
-    let drawScore = 0;
-    while(gameCounter) {
-        let plays = playRound();
-        if (plays === 0) {
-            computerScore++;
-        }else if (plays === 1) {
-            playerScore++;
-        }else if (plays === 2 ){
-            drawScore++
-        }
-        if(computerScore === 5 || playerScore === 5) {
-            gameCounter = false;
-        }
-    }
-   if (playerScore === 5) {
-       alert("You Win! Score: " + playerScore+ " Win - " + drawScore + " Draws - " + computerScore + " Lost");
-   }else {
-       alert("You Lost! Score: " + playerScore+ " Win - " + drawScore + " Draws - " + computerScore + " Lost");
-   }
-}
-game()
+//select the button
+const srock = document.querySelector('#rock');
+const spaper = document.querySelector('#paper');
+const sscissors = document.querySelector('#scissors')
+
+srock.onclick = () => playRound(0);
+spaper.onclick = () => playRound(1);
+sscissors.onclick = () => playRound(2);
