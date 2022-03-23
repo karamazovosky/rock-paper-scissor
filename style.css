@@ -1,0 +1,24 @@
+.stage {
+    border: .3rem solid black;
+    height: 600px;
+}
+.hands {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.hand {
+    border: .3rem solid black;
+    border-radius: .3rem;
+    margin: 1rem;
+    text-align: center;
+    width: 250px;
+    height: 250px;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+    padding-top: 25px;
+}
