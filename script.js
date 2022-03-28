@@ -63,12 +63,16 @@ function playRound (y = playerPlay(), x = computerPlay()) {
     }
 }
 
-//select the button
-const srock = document.querySelector('#rock');
-const spaper = document.querySelector('#paper');
-const sscissors = document.querySelector('#scissors')
+function playRock() {
+    playRound(0)
+}
+function playPaper() {
+    playRound(1)
+}
+function playScissors() {
+    playRound(2)
+}
 
-
-srock.onclick = () => playRound(0);
-spaper.onclick = () => playRound(1);
-sscissors.onclick = () => playRound(2);
+document.getElementById("rock").addEventListener("click", playRock);
+document.getElementById("paper").addEventListener("click", playPaper);
+document.getElementById("scissors").addEventListener("click", playScissors);
