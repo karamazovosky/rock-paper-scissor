@@ -62,17 +62,30 @@ function playRound (y = playerPlay(), x = computerPlay()) {
         return result = 2;
     }
 }
+//set div and button visibility
+document.getElementById("hands").style.visibility = "hidden";
+document.getElementById("button").style.visibility = "visible";
+
+//function to hide button
+function hidebutton() {
+    var x = document.getElementById("button")
+    if(x.style.visibility === "visible") {
+        x.style.visibility = "hidden";
+    }else {
+        x.style.visibility = "visible";
+    }
+}
 
 // function to toggle hide div
 document.getElementById("button").addEventListener("click", showchoice)
 function showchoice() {
     var x = document.getElementById("hands");
-    if(x.style.display === "none") {
-        x.style.display = "flex";
+    if(x.style.visibility === "hidden") {
+        x.style.visibility = "visible";
     }else {
-        x.style.display = "none";
+        x.style.visibility = "hidden";
     }
-
+    hidebutton();
 }
 
 //clickable div

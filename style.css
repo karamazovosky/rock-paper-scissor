@@ -2,7 +2,7 @@
     border: .3rem solid black;
     height: 600px;
 }
-.hands {
+#hands {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -23,6 +23,12 @@ img {
     padding-top: 25px;
 }
 
-#hands {
-    display: none;
+.bottomstage {
+    text-align: center;
+}
+
+#button {
+    margin-top: 12px;
+    padding: 10px 100px;
+
 }
