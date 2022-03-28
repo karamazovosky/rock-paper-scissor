@@ -3,23 +3,23 @@ function computerPlay () {
     return hand;
 }
 
-
-function playerPlay() {
-    let check = true;
-    while (check) {
-        let hand = prompt('Select your hand (Rock/Paper/Scissors) :');
-        hand = hand.toLowerCase();
-        if (hand==='rock') {
-            return hand = 0;
-        }else if (hand==='paper') {
-            return hand = 1;
-        }else if (hand==='scissors') {
-            return hand = 2;
-        }else {
-            alert('Please Input the Correct Play')
-        } 
-    }
-}
+//only used on first iteration ------------------------
+// function playerPlay() {
+//     let check = true;
+//     while (check) {
+//         let hand = prompt('Select your hand (Rock/Paper/Scissors) :');
+//         hand = hand.toLowerCase();
+//         if (hand==='rock') {
+//             return hand = 0;
+//         }else if (hand==='paper') {
+//             return hand = 1;
+//         }else if (hand==='scissors') {
+//             return hand = 2;
+//         }else {
+//             alert('Please Input the Correct Play')
+//         } 
+//     }
+// }
 
 
 function playRound (y = playerPlay(), x = computerPlay()) {
@@ -63,6 +63,23 @@ function playRound (y = playerPlay(), x = computerPlay()) {
     }
 }
 
+// function to toggle hide div
+document.getElementById("button").addEventListener("click", showchoice)
+function showchoice() {
+    var x = document.getElementById("hands");
+    if(x.style.display === "none") {
+        x.style.display = "flex";
+    }else {
+        x.style.display = "none";
+    }
+
+}
+
+//clickable div
+document.getElementById("rock").addEventListener("click", playRock);
+document.getElementById("paper").addEventListener("click", playPaper);
+document.getElementById("scissors").addEventListener("click", playScissors);
+
 function playRock() {
     playRound(0)
 }
@@ -72,7 +89,3 @@ function playPaper() {
 function playScissors() {
     playRound(2)
 }
-
-document.getElementById("rock").addEventListener("click", playRock);
-document.getElementById("paper").addEventListener("click", playPaper);
-document.getElementById("scissors").addEventListener("click", playScissors);
