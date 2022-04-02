@@ -1,6 +1,8 @@
 .stage {
     border: .3rem solid black;
-    height: 600px;
+    height: 400px;
+    text-align: center;
+    padding: 25px;
 }
 #hands {
     display: flex;

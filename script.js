@@ -24,8 +24,8 @@ function computerPlay () {
 
 function playRound (y = playerPlay(), x = computerPlay()) {
     let result;
-    console.log(x);
     console.log(y);
+    console.log(x);
     //rock > scissors
     if (x === 0 && y === 2){
         alert("You Lost ! Rock Beats Scissors!");
@@ -76,7 +76,7 @@ function hidebutton() {
     }
 }
 
-// function to toggle hide div
+// function to show div / start game
 document.getElementById("button").addEventListener("click", showchoice)
 function showchoice() {
     var x = document.getElementById("hands");
@@ -86,19 +86,56 @@ function showchoice() {
         x.style.visibility = "hidden";
     }
     hidebutton();
+    // checkScore();
 }
 
-//clickable div
-document.getElementById("rock").addEventListener("click", playRock);
-document.getElementById("paper").addEventListener("click", playPaper);
-document.getElementById("scissors").addEventListener("click", playScissors);
 
+
+//function to be executed when eventlistener triggered
 function playRock() {
-    playRound(0)
+    let x = playRound(0);
+    nextRound(x);
 }
 function playPaper() {
-    playRound(1)
+    let x = playRound(1);
+    nextRound(x);
 }
 function playScissors() {
-    playRound(2)
+    let x = playRound(2);
+    nextRound(x);
+}
+
+//function for eventlistener 
+let rockClick = document.getElementById("rock").addEventListener("click", playRock);
+let paperClick = document.getElementById("paper").addEventListener("click", playPaper);
+let scissorsClick = document.getElementById("scissors").addEventListener("click", playScissors);
+
+
+let playerScore = 0
+let computerScore = 0
+let drawScore = 0
+//function temp for next round
+function nextRound(value) {
+    if(value === 0) {
+        computerScore +=1
+        checkScore();
+    }else if(value === 1) {
+        playerScore +=1
+        checkScore();
+    }else if(value === 2) {
+        drawScore +=1
+        checkScore();
+    }
+
+}
+
+//function to play best of 3 game and to show score
+function checkScore() {
+    if(computerScore == 5|| playerScore == 5) {
+        document.getElementById("hands").style.visibility = "hidden";
+        document.getElementById("button").style.visibility = "visible";
+        playerScore = 0
+        computerScore = 0
+        drawScore = 0
+    }
 }
