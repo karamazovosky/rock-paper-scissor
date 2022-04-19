@@ -86,7 +86,7 @@ function showchoice() {
         x.style.visibility = "hidden";
     }
     hidebutton();
-    // checkScore();
+    document.getElementById("stage").style.display= "block";
 }
 
 
@@ -114,7 +114,7 @@ let scissorsClick = document.getElementById("scissors").addEventListener("click"
 let playerScore = 0
 let computerScore = 0
 let drawScore = 0
-//function temp for next round
+//function temp for next round - the game itself
 function nextRound(value) {
     if(value === 0) {
         computerScore +=1
@@ -137,5 +137,8 @@ function checkScore() {
         playerScore = 0
         computerScore = 0
         drawScore = 0
-    }
+    }return
 }
+
+//display big score
+

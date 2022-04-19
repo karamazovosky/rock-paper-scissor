@@ -1,8 +1,9 @@
-.stage {
+#stage {
     border: .3rem solid black;
     height: 400px;
     text-align: center;
     padding: 25px;
+    /* display: none; */
 }
 #hands {
     display: flex;
@@ -33,4 +34,15 @@ img {
     margin-top: 12px;
     padding: 10px 100px;
 
+}
+
+#stage .stagetitle {
+    display:block;
+    padding: 10px;
+    margin-bottom: 120px;
+}
+
+.bigscore {
+    display: flex;
+    justify-content: space-evenly;
 }
