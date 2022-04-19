@@ -118,12 +118,17 @@ let drawScore = 0
 function nextRound(value) {
     if(value === 0) {
         computerScore +=1
+        displayscoreC.textContent = computerScore;
+        displayscoreR.textContent = computerScore+playerScore+drawScore;
         checkScore();
     }else if(value === 1) {
         playerScore +=1
+        displayscoreP.textContent = playerScore;
+        displayscoreR.textContent = computerScore+playerScore+drawScore;
         checkScore();
     }else if(value === 2) {
         drawScore +=1
+        displayscoreR.textContent = computerScore+playerScore+drawScore;
         checkScore();
     }
 
@@ -132,13 +137,20 @@ function nextRound(value) {
 //function to play best of 3 game and to show score
 function checkScore() {
     if(computerScore == 5|| playerScore == 5) {
+        if(computerScore ==5) {
+            alert("Computer Wins !, Try Again!")
+        }else {
+            alert("You Win! Congratulations!")
+        }
         document.getElementById("hands").style.visibility = "hidden";
         document.getElementById("button").style.visibility = "visible";
         playerScore = 0
         computerScore = 0
         drawScore = 0
+        document.getElementById("stage").style.display= "none";
     }return
 }
 
-//display big score
-
+let displayscoreP = document.getElementById("bigscoreyou");
+let displayscoreC = document.getElementById("bigscorecomp");
+let displayscoreR = document.querySelector('p.gamenumber');

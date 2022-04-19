@@ -3,7 +3,7 @@
     height: 400px;
     text-align: center;
     padding: 25px;
-    /* display: none; */
+    display: none;
 }
 #hands {
     display: flex;
@@ -45,4 +45,10 @@ img {
 .bigscore {
     display: flex;
     justify-content: space-evenly;
+    margin-bottom: 70px;
+}
+
+#bigscoreyou, 
+#bigscorecomp{
+    font-size: x-large;
 }
